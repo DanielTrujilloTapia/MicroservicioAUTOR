@@ -40,4 +40,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+// Configuración específica para Render
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080"; // Usa 8080 como fallback
+app.Run($"http://0.0.0.0:{port}");
